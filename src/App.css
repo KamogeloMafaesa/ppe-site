@@ -40,3 +40,37 @@
 .read-the-docs {
   color: #888;
 }
+
+.products-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+
+}
+/* Tablets (2 columns) */
+@media(max-width:992px){
+  .products-container{
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  .product-card{
+    max-width: 100%;
+  }
+
+}
+
+
+/* Mobile (1 column) */
+@media(max-width:600px){
+  .products-container{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .product-card{
+    max-width: 100%;
+    background-color: blue;
+  }
+}
