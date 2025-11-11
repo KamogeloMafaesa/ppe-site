@@ -49,10 +49,87 @@
   justify-items: center;
 
 }
+.product-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+/*modal form styling*/
+.modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0. 0.6);
+
+}
+
+.modal-content{
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0. 0.3);
+  position: relative;
+}
+
+.modal-content h3{
+  text-align: center;
+  color: #004f67;
+  margin-bottom: 1rem;
+}
+.modal-content label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  background-color: #ffb400;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #e0a200;
+}
+
+.close{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+}
 /* Tablets (2 columns) */
 @media(max-width:992px){
+
   .products-container{
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   .product-card{
@@ -73,4 +150,14 @@
     max-width: 100%;
 
   }
+  .navbar{
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+  }
+  /*.navbar .navlink{
+    color: yellow;
+    flex-direction: column;
+    gap: 0.5rem;
+  }*/
 }

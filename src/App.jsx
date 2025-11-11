@@ -7,7 +7,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Products from './pages/Products'
 import './App.css'
-
+import ThankYou from './pages/ThankYou'
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Route path="/Products" element={<Products />}/>
           <Route path="/About" element={<About/>} />
           <Route path="/Contact" element={<Contact/>} />
+          <Route path='/ThankYou' element={<ThankYou />} />
         </Routes>
       </main>
     <Footer/>
