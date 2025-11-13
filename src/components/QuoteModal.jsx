@@ -1,6 +1,9 @@
 import { useState } from "react"
+import Products from "../pages/Products";
 
 function QuoteModal({product, isOpen, onClose}){
+    const productField = " Product-Name";
+    const customerField = "Customer";
 
     const [formData, setFormData] = useState({
         name: "",
@@ -9,7 +12,7 @@ function QuoteModal({product, isOpen, onClose}){
     });
 
     const handleChange = (e) =>{
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        setFormData({ ...formData,[e.target.name]: e.target.value});
     };
 
     const handleSubmit = (e) => {
@@ -20,8 +23,9 @@ function QuoteModal({product, isOpen, onClose}){
     };
 
     if (!isOpen) return null;
-
+    
     return(
+
         <div className="modal" onClick = {onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <span className="close" onClick={onClose}>
@@ -34,28 +38,28 @@ function QuoteModal({product, isOpen, onClose}){
                 method = "POST"
                 >
                     <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_subject" value="New Quote Request from Website" />
+                    <input type="hidden" name="_subject" value="New Quote Request from the Mafaesa Trading Website" />
                     <input type="hidden" name="_template" value="table" />
                     <input type="hidden" name="_next" value="http://localhost:5173/thank-you" />
 
                     <label>Product</label>
-                    <input type="text" value={product} readOnly />
+                    <input type="text" id= "productName" name={productField} value={product} readOnly />
 
                     <label>Full Name</label>
                     <input type="text"
-                    name="name"
+                    name= {customerField}
                     required
                    />
 
                     <label>Email</label>
                     <input type="email"
-                    name="email"
+                    name="Email"
                     required
                     />
 
                     <label>Quantity</label>
                     <input type="number"
-                     name="quantity"
+                     name="Quantity"
                      min="1"
                      required
                      />
