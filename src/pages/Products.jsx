@@ -4,6 +4,17 @@ import QuoteModal from '../components/QuoteModal';
 import { useCartStore } from '../store/useCartStore';
 
 
+{/*Images */}
+import greenGloves from '../Images/GreenNitrileChemicalGloves.jpg'
+import safetyGlasses from '../Images/uvex i-litesafetyglasses.png'
+import Apron from '../Images/DisposablePlasticApronPack100.jpg'
+import BlueJacket from '../Images/TitanPremiumRoyalBlueWorkwearJacket.jpg'
+import BlueTrouser from '../Images/TitanPremiumRoyalBlueWorkwearTrouser.jpg'
+import Overall from '../Images/Safety_Jacket.png'
+import SafetyBoots from '../Images/SisiCateSafetyBoot.jpg'
+import LimeMeshVest from '../Images/LimeMeshReflectiveVest.jpg'
+import HardHat from '../Images/HardHatOrange.jpg'
+
 function Products(){
     const [selectedProduct, setSelectedProduct] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +33,7 @@ function Products(){
             id: 1,
             name: " Green Nitrile Chemical Gloves",
             description: "Durable, powder-freegloves for industrial and mechanical use.",
-            image: "src/Images/GreenNitrileChemicalGloves.jpg"
+            image: greenGloves
             
             
         },
@@ -31,53 +42,53 @@ function Products(){
             id:2,
             name: "uvex i-lite Safety Glasses",
             description: "Anti-fog, scratch-resistant safety eyewear.",
-            image: "src/Images/uvex i-litesafetyglasses.png"
+            image: safetyGlasses
         },
         {
             id:3,
             name: "Disposable Plastic Apron Pack 100",
             description: "Lightwight waterproof multi-purpose aprons.",
-            image: "src/Images/DisposablePlasticApronPack100.jpg"
+            image: Apron
         },
 
         {
             id:4,
             name: "Titan Premium Royal Blue Workwear Jacket",
             description: "Flame-reduction overalls designed for tough environments.",
-            image: "src/Images/TitanPremiumRoyalBlueWorkwearJacket.jpg"
+            image: BlueJacket
         },
         
         {
             id: 5,
             name: "Titan Premium Royal Blue Workwear Trouser",
             description: "Flame-reduction overalls designed for tough environments.",
-            image: "src/Images/TitanPremiumRoyalBlueWorkwearTrouser.jpg"
+            image: BlueTrouser
         },
         {
             id: 6,
             name: "Work Overalls",
             description: "Flame-reduction overalls designed for tough environments.",
-            image: "src/Images/Safety_Jacket.png"
+            image: Overall
         },
 
         {
             id: 7,
             name: "Sisi Cate Safety Boot",
             description: "Crafted from premium leather with a steel toe cap and toe bumper, this boot ensures safety in hazardous work environments.",
-            image: "src/Images/SisiCateSafetyBoot.jpg"
+            image: SafetyBoots
         },
         
         {
             id: 8,
             name: "Lime Mesh Reflective Vest",
             description: "Hi Visability vest with a cool mesh fabric.",
-            image: "src/Images/LimeMeshReflectiveVest.jpg"
+            image: LimeMeshVest
         },
         {
             id: 9,
             name: "Hard Hat - Orange",
             description: "Standard issue orange hard hat for protection against falling hazards.",
-            image: "src/Images/HardHatOrange.jpg"
+            image: HardHat
         },
 
     ]
