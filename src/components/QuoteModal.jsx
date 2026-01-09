@@ -34,8 +34,9 @@ function QuoteModal({product, isOpen, onClose}){
                 <h3>Request a Quote</h3>
 
                 <form
-                action = "https://formsubmit.co/kamogelomafaesa7@gmail.com"
+                action = "https://formsubmit.co/mangalisomafaesa@gmail.com"
                 method = "POST"
+       
                 >
                     <input type="hidden" name="_captcha" value="false" />
                     <input type="hidden" name="_subject" value="New Quote Request from the Mafaesa Trading Website" />

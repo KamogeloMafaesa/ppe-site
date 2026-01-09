@@ -40,7 +40,7 @@ return(
                 <h4 className="font-semibold mb-2">Customer Details</h4>
 
                 {/*FormSumbit form will send all the fields to business email */}
-                <form action="https://formsubmit.co/kamogelomafaesa7@gmail.com" method="POST">
+                <form action="https://formsubmit.co/mangalisomafaesa@gmail.com" method="POST">
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_subject" value="New Quote Request from Mafaesa Trading Website" />
                 <input type="hidden" name="_template" value="table" />
