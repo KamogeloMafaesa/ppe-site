@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom"
+import { useCartStore } from "../store/useCartStore";
+import { useEffect } from "react";
 
 
 function ThankYou(){
+  const clearCart = useCartStore((state) => state.clearCart)
+
+  useEffect(() =>{
+    clearCart()
+  }, [])
     return(
 
     <div className="min-h-100 flex flex-col items-center justify-center bg-gray-50 px-4 text-center">

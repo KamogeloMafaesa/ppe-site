@@ -7,20 +7,23 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Products from './pages/Products'
 import ThankYou from './pages/ThankYou'
+import Cart from './pages/Cart'
 import './App.css'
 
 
 function App() {
   return (
    <div className="flex flex-col min-h-screen">
-    <main>
     <Header/>
+    <main className="flex-grow">
+    
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Products" element={<Products />}/>
           <Route path="/About" element={<About/>} />
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/Cart" element={<Cart />} />
         </Routes>
       </main>
     <Footer/>
