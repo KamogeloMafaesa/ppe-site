@@ -15,8 +15,8 @@ function App() {
   return (
    <div className="flex flex-col min-h-screen">
     <Header/>
-    <main className="flex-grow">
-    
+    <main className="flex-grow w-full">
+  
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Products" element={<Products />}/>
@@ -25,6 +25,7 @@ function App() {
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/Cart" element={<Cart />} />
         </Routes>
+
       </main>
     <Footer/>
      
