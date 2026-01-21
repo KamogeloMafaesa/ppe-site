@@ -1,4 +1,5 @@
 import {Link, NavLink} from 'react-router-dom'
+import { useState } from 'react'
 import Logo from '../Images/Logo.svg'
 import { useCartStore } from '../store/useCartStore'
 
@@ -9,16 +10,20 @@ const items = useCartStore((s) => s.items)
 
 const count = items.reduce((sum, i) => sum + i.quantity, 0)
 
+const [menuOpen, setMenuOpen] = useState(false);
+
  const navLinkStyles = ({ isActive }) =>
     isActive ? '!text-amber-400 font-semibold': '!text-cyan-950 hover:!text-cyan-900'
 
     return(
         
         <header className="w-full bg-white shadow-sm">
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-20 navbar">
-                <Link to="/" className="flex items-center gap-2 logo text-2xl font-bold text-blue-600"><img src={Logo} alt="Mafaesa Trading Enterprise Logo." className="h-20" /></Link>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center h-20 ">
+                {/* Logo */}
+                <Link to="/" className="flex items-center gap-2 logo "><img src={Logo} alt="Mafaesa Trading Enterprise Logo." className="h-20" /></Link>
 
-                <nav className="flex items-center gap-6">
+                    {/* Navigation Bar */}
+                <nav className="hidden md:flex items-center gap-6">
                     <NavLink to="/"className={navLinkStyles}>Home</NavLink>
                     <NavLink to="/Products"className={navLinkStyles}>Products</NavLink>
                     <NavLink to="/About"className={navLinkStyles}>About</NavLink>
@@ -34,7 +39,39 @@ const count = items.reduce((sum, i) => sum + i.quantity, 0)
                     )}
                     </Link>
                 </nav>
+
+                {/*Hamburger menu for mobile*/}
+                <button onClick={() => setMenuOpen(!menuOpen)}
+                    className="md:hidden inline-flex items-center justify-center p-2 rounded-lg hover:bg-gray-100" aria-label="Open menu">
+                <svg className="h-6 w-6 text-cyan-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2}
+                     d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                </svg>
+                </button>
             </div>
+
+            {/*Mobile menu*/}
+            {menuOpen && (
+                <div className="md:hidden bg-white border-t shadow-sm">
+                    <nav className="flex flex-col px-4 py-4 space-y-4">
+                        <NavLink onClick={() => setMenuOpen(false)} to="/" className={navLinkStyles}>Home</NavLink>
+                        <NavLink onClick={() => setMenuOpen(false)} to="/Products" className={navLinkStyles}>Products</NavLink>
+                        <NavLink onClick={() => setMenuOpen(false)} to="/About" className={navLinkStyles}>About</NavLink>
+                        <NavLink onClick={() => setMenuOpen(false)} to="/Contact" className={navLinkStyles}>Contact</NavLink>
+                    
+                    <Link onClick={() => setMenuOpen(false)}
+                        to="/cart" className="inline-flex items-center gap-2 text-cyan-950">
+                            Cart
+                            {count > 0 && (
+                                <span className="bg-red-600 text-white text-xs px-2 py-0.5 rounded-full">
+                                    {count}
+                                </span>
+                            )}
+                        </Link>
+                    
+                    </nav>
+                </div>
+            )}
         </header>
         
     );

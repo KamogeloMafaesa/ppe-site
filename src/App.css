@@ -6,7 +6,9 @@
   text-align: center;*/
   margin: 0;
 }
-
+html, body{
+  overflow-x: hidden;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
