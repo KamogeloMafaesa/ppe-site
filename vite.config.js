@@ -9,6 +9,6 @@ export default defineConfig({
     tailwindcss(),
     
 ],
-     base: '/ppe-site/',
+     base:'/ppe-site/',
     
 })
