@@ -12,7 +12,7 @@ function Cart(){
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
-    const cartSummary = items.map((i) => `${i.name} x ${i.name} x ${i.quantity}`).join('\n')
+    const cartSummary = items.map((i) => `${i.name} x ${i.quantity}`).join('\n')
 
 return(
     <section className="p-8 max-w-4xl mx-auto">
@@ -31,9 +31,20 @@ return(
                             <p className="text-sm text-gray-600">{i.description}</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                        <input type="number" min= "1" value={i.quantity} onChange={(e) => updateQuantity(i.id, Number(e.target.value))} className="w-20 border rounded p-1" />
+                    <div className="flex items-center gap-2">
+                        <button disabled= {i.quantity === 1} onClick={() => updateQuantity(i.id, i.quantity -1)}
+                        className="px-3 py-1 border rounded text-lg disabled:opacity-40"> - </button>
+
+                        <span className="w-8 text-center font-medium">{i.quantity}</span>
+
+                        <button onClick={() => updateQuantity(i.id, i.quantity + 1) }
+                        className="px-3 py-1 border rounded text-lg"> + </button>
+
+                        <button onClick={() => removeItem(i.id)} className="ml-3 text-sm text-red-600 hover:underline"> Remove </button>
                     </div>
+                    {/*<div className="flex items-center gap-3">
+                        <input type="number" min= "1" value={i.quantity} onChange={(e) => updateQuantity(i.id, Number(e.target.value))} className="w-20 border rounded p-1" />
+                    </div>*/}
                 </div>
             ))}
             <div className="bg-gray-50 p-4 rounded">

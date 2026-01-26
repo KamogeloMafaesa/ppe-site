@@ -11,7 +11,7 @@ export const useCartStore = create (
         set((state) => {
 
             //if product is not null, increase quantity
-            const existing = state.items.find((item) => item.id == product.id)
+            const existing = state.items.find((item) => item.id === product.id)
 
             if(existing) {
                 return{
@@ -32,8 +32,9 @@ export const useCartStore = create (
             items: state.items.filter((item) => item.id !== id),
         })),
 
-        /*updateQuantity: (id, qty) =>
-            set((state) => ({items: state.items.map((i) => (item.id === id ? {...item, quantity: qty } : item ))})),*/
+        updateQuantity: (id, qty) =>
+            set((state) => ({items: state.items.map((item) => (item.id === id ? {...item, quantity: Math.max(1, qty) } : item ))})),
+
         clearCart: () => set({ items: [] }),
 }),
         {
